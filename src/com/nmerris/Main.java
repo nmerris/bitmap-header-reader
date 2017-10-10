@@ -9,6 +9,9 @@ import java.nio.file.Paths;
 import java.util.Scanner;
 
 // author: Nathan Merris
+// this program reads in a bitmap file that you specify via console input
+// the width and height of the file in pixels is reported back to the console
+// if you enter an invalid file path, an error message is shown
 public class Main {
 
     public static void main(String[] args) {
@@ -17,7 +20,7 @@ public class Main {
 
         // get the file path from the user
         // example file path: /home/nmerris/IdeaProjects/bitmap header reader/src/com/nmerris/simple.bmp
-        System.out.println("Enter a file path: ");
+        System.out.println("Enter a FULL file path: ");
         Path filePath = Paths.get(scanner.nextLine());
 
         try {
@@ -33,10 +36,11 @@ public class Main {
             int width = bb.getInt(18);
             int height = bb.getInt(22);
 
+            // display the results
             System.out.println("width: " + width + ", height: " + height);
 
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("That file path did not work, please try again.");
         }
 
     } // main
