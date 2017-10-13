@@ -20,7 +20,7 @@ public class Main {
 
         // get the file path from the user
         // example file path: /home/nmerris/IdeaProjects/bitmap header reader/src/com/nmerris/simple.bmp
-        System.out.println("Enter a FULL file path: ");
+        System.out.println("Enter a FULL file path (like '/home/simple.bmp'): ");
         Path filePath = Paths.get(scanner.nextLine());
 
         try {
@@ -37,7 +37,7 @@ public class Main {
             int height = bb.getInt(22);
 
             // display the results
-            System.out.println("width: " + width + ", height: " + height);
+            System.out.println("width: " + width + "px, height: " + height + "px");
 
         } catch (IOException e) {
             System.out.println("That file path did not work, please try again.");
